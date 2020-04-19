@@ -15,4 +15,19 @@ data class TicketDto(val itineraryId: Int?,
                      val hasLuggage: Boolean = false,
                      @field:PositiveOrZero val price: BigDecimal,
                      val departureTime: LocalTime,
-                     val arrivalTime: LocalTime)
+                     val arrivalTime: LocalTime) {
+    companion object {
+        fun build(itineraryId: Int? = null,
+                  departureDate: LocalDate = LocalDate.now(),
+                  arrivalDate: LocalDate = LocalDate.now(),
+                  originCity: String = "origin city",
+                  destinationCity: String = "destination city",
+                  passengerName: String = "passenger name",
+                  passengerAge: Int = 30,
+                  hasLuggage: Boolean = false,
+                  price: BigDecimal = BigDecimal.TEN,
+                  departureTime: LocalTime = LocalTime.now(),
+                  arrivalTime: LocalTime = LocalTime.now()) = TicketDto(itineraryId, departureDate, arrivalDate,
+                originCity, destinationCity, passengerName, passengerAge, hasLuggage, price, departureTime, arrivalTime)
+    }
+}

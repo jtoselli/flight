@@ -24,4 +24,18 @@ data class Ticket(
         val departureTime: LocalTime,
         val arrivalTime: LocalTime) {
 
+    companion object {
+        fun build(id: Int? = null,
+                  departureDate: LocalDate = LocalDate.now(),
+                  arrivalDate: LocalDate = LocalDate.now(),
+                  originCity: String = "Origin City",
+                  destinationCity: String = "Destination City",
+                  passengerName: String = "Passenger Name",
+                  passengerAge: Int = 30,
+                  hasLuggage: Boolean = false,
+                  price: BigDecimal = BigDecimal.TEN,
+                  departureTime: LocalTime = LocalTime.now(),
+                  arrivalTime: LocalTime = LocalTime.now()) = Ticket(id, departureDate, arrivalDate, originCity,
+                destinationCity, passengerName, passengerAge, hasLuggage, price, departureTime, arrivalTime)
+    }
 }
