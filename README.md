@@ -7,7 +7,8 @@ This project has 2 modules:
 1. flight-impl
 
 The flight-api submodule contains the DTO and the API interface to be used by any Bytecode-compatible runtime to create 
-a blocking client. Retrofit 1.x-2.x/RESTEasy/Jersey are some examples.
+a blocking client. Retrofit 1.x-2.x/RESTEasy/Jersey are some examples. This artifact could be imported as a library in
+any app that requires a client of this microservice. 
 
 The flight-impl submodule contains a microservice implemented with Spring Boot 2.x, using H2 embedded SQL server, JPA,
 spring-data-jpa and written in Kotlin. The `kotlin-maven-plugin` is heavily used to open Kotlin classes that are 
