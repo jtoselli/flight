@@ -59,7 +59,7 @@ internal class TicketResourceTest {
 
     @Test
     fun `test save propagates exception`() {
-        val original = TicketDto.build();
+        val original = TicketDto.build()
         `when`(ticketService.save(original)).thenThrow(RuntimeException::class.java)
 
         assertThrows<RuntimeException> { subject.save(original) }

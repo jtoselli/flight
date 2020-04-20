@@ -1,6 +1,25 @@
 # Flight manager practical example
 
-Request examples:
+## Project structure
+
+This project has 2 modules:
+1. flight-api
+1. flight-impl
+
+The flight-api submodule contains the DTO and the API interface to be used by any Bytecode-compatible runtime to create 
+a blocking client. Retrofit 1.x-2.x/RESTEasy/Jersey are some examples.
+
+The flight-impl submodule contains a microservice implemented with Spring Boot 2.x, using H2 embedded SQL server, JPA,
+spring-data-jpa and written in Kotlin. The `kotlin-maven-plugin` is heavily used to open Kotlin classes that are 
+final by default. Spring needs these classes opened to be able to create dynamic proxies. On the other hand JPA needs
+entity classes to contains a parameterless constructor, something that Kotlin `data class` don't support.
+This submodule contains a REST Controller (TicketResource), a service layer and a spring-data Repository.
+
+## Run the microservice
+1. Run `mvn spring-boot:run` at the parent project
+1. The app will start at port 8080 by default.
+
+## Request examples:
 
 GET /tickets/{id}
 ```shell script
@@ -26,5 +45,5 @@ curl --location --request POST 'http://localhost:8080/tickets/' \
 }'
 ```
 
-# Swagger 
+## Swagger 
 Check: http://localhost:8080/swagger-ui.html#/ticket-resource

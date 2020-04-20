@@ -14,9 +14,7 @@ import org.mockito.Mockito.*
 import org.mockito.junit.jupiter.MockitoExtension
 import java.util.*
 
-internal class TicketServiceKtTest
-
-internal class ExtensionFunctionsTest {
+internal class TicketServiceKtTest {
     @Test
     fun `test Ticket#toTicketDto function`() {
         val model = Ticket.build()

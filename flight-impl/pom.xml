@@ -12,6 +12,7 @@
 
     <properties>
         <swagger.version>2.9.2</swagger.version>
+        <skip.spring-boot.plugin>false</skip.spring-boot.plugin>
     </properties>
 
     <dependencies>
@@ -81,6 +82,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>false</skip>
+                    <mainClass>com.jtoselli.flight.FlightApplicationKt</mainClass>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
