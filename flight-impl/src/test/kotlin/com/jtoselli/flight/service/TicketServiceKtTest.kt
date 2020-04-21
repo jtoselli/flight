@@ -74,7 +74,6 @@ internal class DefaultTicketServiceTest {
     @Test
     fun `test findById throws TicketNotFoundException`() {
         val id = 1
-        val ticket = Ticket.build()
         `when`(repository.findById(id)).thenReturn(Optional.empty())
 
         assertThrows<TicketNotFoundException> { subject.findById(id) }

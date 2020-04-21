@@ -11,8 +11,8 @@
     <artifactId>flight-impl</artifactId>
 
     <properties>
-        <swagger.version>2.9.2</swagger.version>
         <skip.spring-boot.plugin>false</skip.spring-boot.plugin>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencies>
